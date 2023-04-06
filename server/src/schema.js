@@ -4,6 +4,7 @@ const typeDefs = gql`
   type Query {
     "Query to get tracks array for the homepage grid"
     tracksForHome: [Track!]!
+    authorDirect: [Author!]!
   }
 
   "A track is a group of Modules that teaches about a specific topic"
@@ -12,7 +13,7 @@ const typeDefs = gql`
     "The track's title"
     title: String!
     "The track's main Author"
-    author: Author!
+    author: Author
     "The track's illustration to display in track card or track page detail"
     thumbnail: String
     "The track's approximate length to complete, in minutes"
@@ -28,6 +29,12 @@ const typeDefs = gql`
     name: String!
     "Author's profile picture"
     photo: String
+    author: Author
+    mock: MockTest
+  }
+  
+  type MockTest {
+     extra: String
   }
 `;
 
